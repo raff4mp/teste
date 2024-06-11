@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            margin: 0;
+            font-family: 'Pacifico', cursive;
+            overflow: hidden;
+            text-align: center;
+            color: #ff1493;
+        }
+        .container {
+            position: relative;
+            max-width: 90%;
+        }
+        .heart {
+            color: #ff69b4;
+            font-size: 30px;
+            position: absolute;
+            animation: float 7s infinite ease-in-out;
+            opacity: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-600px) scale(0.5);
+                opacity: 0;
+            }
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #ff1493;
+            animation: glow 2s ease-in-out infinite alternate;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4;
+            }
+            to {
+                text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4, 0 0 80px #ff69b4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart" style="animation-delay: 0s; left: 10%; font-size: 50px;">❤️</div>
+        <div class="heart" style="animation-delay: 1s; left: 20%; font-size: 40px;">💖</div>
+        <div class="heart" style="animation-delay: 2s; left: 30%; font-size: 45px;">💕</div>
+        <div class="heart" style="animation-delay: 3s; left: 40%; font-size: 35px;">💗</div>
+        <div class="heart" style="animation-delay: 4s; left: 50%; font-size: 50px;">💓</div>
+        <div class="heart" style="animation-delay: 5s; left: 60%; font-size: 40px;">💞</div>
+        <div class="heart" style="animation-delay: 6s; left: 70%; font-size: 45px;">💘</div>
+        <div class="heart" style="animation-delay: 7s; left: 80%; font-size: 35px;">💝</div>
+        <div class="message">Hey Monique,
+
+            Espero que seu dia esteja sendo tão incrível quanto você é. Só queria te dizer que cada momento que passamos juntos tem sido uma verdadeira inspiração para mim. Sua presença ilumina meu mundo de uma forma única, e estou genuinamente grato por cada risada compartilhada, cada conversa significativa e cada momento de conexão que temos.
+            
+            Mal posso esperar para criar mais memórias juntos e explorar todas as possibilidades que o futuro reserva para nós. Você é uma pessoa especial e quero que saiba o quanto sua presença na minha vida significa para mim!</div>
+    </div>
+    <script>
+        function floatHearts() {
+            const hearts = document.querySelectorAll('.heart');
+            hearts.forEach((heart, index) => {
+                const delay = Math.random() * 7;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.left = `${Math.random() * 100}%`;
+            });
+        }
+        floatHearts();
+    </script>
+</body>
+</html>
